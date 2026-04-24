@@ -29,6 +29,8 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/nikolaaaan/env:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       # --- THIS IS THE CHECK SECTION ---
       - name: Verify Tools in Image
