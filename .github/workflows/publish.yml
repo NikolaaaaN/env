@@ -1,0 +1,39 @@
+name: Build and Push Toolchain
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/NikolaaaaN/env:latest
+
+      # --- THIS IS THE CHECK SECTION ---
+      - name: Verify Tools in Image
+        run: |
+          # We run the image we just pushed to make sure it's valid
+          docker run --rm ghcr.io/NikolaaaaN/env:latest arm-none-eabi-gcc --version
+          docker run --rm ghcr.io/NikolaaaaN/env:latest python3 --version
+          docker run --rm ghcr.io/NikolaaaaN/env:latest make --version
