@@ -28,12 +28,12 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/NikolaaaaN/env:latest
+          tags: ghcr.io/nikolaaaan/env:latest
 
       # --- THIS IS THE CHECK SECTION ---
       - name: Verify Tools in Image
         run: |
           # We run the image we just pushed to make sure it's valid
-          docker run --rm ghcr.io/NikolaaaaN/env:latest arm-none-eabi-gcc --version
-          docker run --rm ghcr.io/NikolaaaaN/env:latest python3 --version
-          docker run --rm ghcr.io/NikolaaaaN/env:latest make --version
+          docker run --rm ghcr.io/nikolaaaan/env:latest arm-none-eabi-gcc --version
+          docker run --rm ghcr.io/nikolaaaan/env:latest python3 --version
+          docker run --rm ghcr.io/nikolaaaan/env:latest make --version
