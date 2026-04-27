@@ -38,4 +38,4 @@ WORKDIR /github/workspace
 
 # 5. Verify the tools were installed correctly
 RUN echo "Current PATH is: $PATH"
-RUN /helios/bin/helios
+RUN helios
