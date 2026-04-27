@@ -24,6 +24,8 @@ RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/he
     && find / -name "*helios*" \
     && ls -l /helios
 
+ENV PATH = /helios/bin
+
 RUN echo "Tool installed successfully!"
 
 # 4. Set the working directory
@@ -31,4 +33,4 @@ RUN echo "Tool installed successfully!"
 WORKDIR /github/workspace
 
 # 5. Verify the tools were installed correctly
-RUN arm-none-eabi-gcc --version && python3 --version
+RUN helios
