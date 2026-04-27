@@ -31,7 +31,8 @@ RUN echo "Tool installed successfully!"
 
 # 4. Set the working directory
 # GitHub Actions clones your code into this path by default
-WORKDIR /github/workspace
+# WORKDIR /github/workspace
 
 # 5. Verify the tools were installed correctly
+RUN echo "Current PATH is: $PATH"
 RUN helios
