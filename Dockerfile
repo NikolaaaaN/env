@@ -22,7 +22,7 @@ RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/he
     && chmod +x /root/helios-toolchain \
     && /root/helios-toolchain \
     && find / -name "*helios*" \
-    && chmod +x /root/helios/bin/helios \
+    && chmod +x /helios/bin/helios \
     && ls -l /helios/bin
 
 ENV PATH = "/helios/bin:${PATH}"
