@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl -L "https://github.com/QuecPython/toolchain/releases/tag/V1.1.0/helios-toolchain" -o /usr/local/bin/helios \
     && chmod +x /usr/local/bin/helios
+    && ls -l /usr/local/bin/mytool \
 
 RUN helios --help && echo "Tool installed successfully!"
 
