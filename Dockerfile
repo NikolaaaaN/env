@@ -26,7 +26,7 @@ RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/he
     && chmod +x /helios/bin/helios \
     && ls -l /helios/bin
 
-ENV PATH = "/helios/bin:${PATH}"
+ENV PATH = "/helios/bin/helios:${PATH}"
 
 RUN echo "Tool installed successfully!"
 
