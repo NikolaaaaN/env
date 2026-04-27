@@ -34,4 +34,4 @@ RUN echo "Tool installed successfully!"
 WORKDIR /github/workspace
 
 # 5. Verify the tools were installed correctly
-RUN /helios/bin/helios
+RUN /helios/bin/helios clean
