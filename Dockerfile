@@ -22,7 +22,7 @@ RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/he
     && chmod +x /root/helios-toolchain \
     && /root/helios-toolchain \
     && find / -name "*helios*" \
-    && ls -l /root
+    && ls -l /helios
 
 RUN echo "Tool installed successfully!"
 
