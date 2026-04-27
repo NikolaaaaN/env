@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     pkg-config \
     p7zip-full \
+    libc6 \
+    libc6 libstdc++6 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/helios-toolchain" -o /root/helios-toolchain \
