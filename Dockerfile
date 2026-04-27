@@ -15,9 +15,6 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-venv \
-    gcc-arm-none-eabi \
-    libnewlib-arm-none-eabi \
-    libstdc++-arm-none-eabi-newlib \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
@@ -26,4 +23,4 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /github/workspace
 
 # 5. Verify the tools were installed correctly
-RUN gcc --version && arm-none-eabi-gcc --version && python3 --version
+RUN arm-none-eabi-gcc --version && python3 --version
