@@ -30,7 +30,7 @@ ENV PATH = "/helios/bin:${PATH}"
 
 RUN echo "Tool installed successfully!"
 
-RUN ldd /helios/bin/helios
+RUN head -n 1 /helios/bin/helios
 
 # 4. Set the working directory
 # GitHub Actions clones your code into this path by default
