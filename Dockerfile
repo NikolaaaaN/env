@@ -24,7 +24,7 @@ RUN curl -L "https://github.com/QuecPython/toolchain/releases/download/V1.1.0/he
 
 RUN echo "Tool installed successfully!"
 
-RUN ls -l /usr/local/bin/helios/bin
+RUN ls -l /usr/local/bin
 
 # 4. Set the working directory
 # GitHub Actions clones your code into this path by default
