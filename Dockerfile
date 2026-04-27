@@ -18,6 +18,11 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
+RUN curl -L "https://github.com/QuecPython/toolchain/releases/tag/V1.1.0/helios-toolchain" -o /usr/local/bin/helios \
+    && chmod +x /usr/local/bin/helios
+
+RUN helios --help && echo "Tool installed successfully!"
+
 # 4. Set the working directory
 # GitHub Actions clones your code into this path by default
 WORKDIR /github/workspace
